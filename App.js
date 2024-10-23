@@ -2,6 +2,9 @@
 // const reactRoot = ReactDOM.createRoot(document.getElementById('reactroot'));
 // reactRoot.render(reactHeading);
 
+import React from 'react'
+import ReactDOM from 'react-dom/client';
+
 const parent = React.createElement('div', {id: 'parent'},
     [React.createElement('div', {id: 'child1'},
         [React.createElement('h1', {}, 'Heading 1'), 
