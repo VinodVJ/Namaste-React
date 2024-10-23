@@ -1,0 +1,28 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "It is a react practice application",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinodVJ/Namaste-React.git"
+  },
+  "keywords": [
+    "react",
+    "vinod",
+    "practice",
+    "firstapp"
+  ],
+  "author": "Vinod Jayaram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinodVJ/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/VinodVJ/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
