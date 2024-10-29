@@ -4,6 +4,9 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom/client';
+import Header from './components/Header';
+import Body from './components/Body';
+
 /*
 const parent = React.createElement('div', {id: 'parent'},
     [React.createElement('div', {id: 'child1'},
@@ -65,6 +68,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 /* <<<<< Episode -04 >>>>> */
 
+/*
 const resData = [
     {
         "info": {
@@ -895,6 +899,7 @@ const Body = () => {
     return <RestaurantContainer />
 }
 
+*/
 
 const AppLayout = () => {
     return (
