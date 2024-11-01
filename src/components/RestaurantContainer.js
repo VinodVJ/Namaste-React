@@ -24,9 +24,13 @@ const RestaurantContainer = () => {
 
     return (
         <div>
-            <div className="res-btn">
-                <button onClick={() => {
-                    const filteredList = resData.filter((res) => res?.info?.avgRating > 4.2)
+            <div className="filter-container">
+                <div className="search-container">
+                    <input type='text' />
+                    <button>Search</button>
+                </div>
+                <button className="res-btn" onClick={() => {
+                    const filteredList = restaurantList.filter((res) => res?.info?.avgRating > 4.2)
                     console.log(filteredList);
                     setRestaurantList(filteredList);
                 }}>Top Rated Resturants</button>

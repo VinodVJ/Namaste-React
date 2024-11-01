@@ -56,3 +56,11 @@
     height: 400px;
     background-color: rgb(236, 232, 232);
 }
+
+.filter-container {
+    display: flex;
+}
+
+.search-container {
+    margin: 10px;
+}
