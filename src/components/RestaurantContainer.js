@@ -5,15 +5,18 @@ import Shimmer from "./Shimmer";
 
 const RestaurantContainer = () => {
     const [restaurantList, setRestaurantList] = useState([]);
-    let rawRestaturantData = [];
+    const [rawRestaturantData, setRawRestaturantData] = useState([]);
+
+    const [searchTxt, setSearchTxt] = useState('');
 
 
     const fetchData = async() => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9879576&lng=77.5374662&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const jsonData = await data.json();
-        rawRestaturantData = jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-        console.log(rawRestaturantData);
-        setRestaurantList(rawRestaturantData)
+        const restaturantData = jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        console.log(restaturantData);
+        setRawRestaturantData(restaturantData);
+        setRestaurantList(restaturantData)
     }
 
     useState(() => {fetchData()}, []);
@@ -26,8 +29,17 @@ const RestaurantContainer = () => {
         <div>
             <div className="filter-container">
                 <div className="search-container">
-                    <input type='text' />
-                    <button>Search</button>
+                    <input type='text' value={searchTxt} onChange={
+                        (e) => {setSearchTxt(e?.target?.value)}
+                    }/>
+                    <button onClick={
+                        () => {
+                            const filteredList = rawRestaturantData.filter((res) =>
+                                res?.info?.name?.toLowerCase().includes(searchTxt.toLowerCase())
+                                );
+                            setRestaurantList(filteredList);
+                        }
+                    }>Search</button>
                 </div>
                 <button className="res-btn" onClick={() => {
                     const filteredList = restaurantList.filter((res) => res?.info?.avgRating > 4.2)
