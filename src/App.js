@@ -6,6 +6,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ContactUs from './components/Contactus';
 
 /*
 const parent = React.createElement('div', {id: 'parent'},
@@ -910,4 +912,16 @@ const AppLayout = () => {
     )
 }
 
-root.render(<AppLayout />)
+const routerConfig = createBrowserRouter([
+    {
+        path: "/",
+        element: <AppLayout />
+    },
+    {
+        path: "/contact",
+        element: <ContactUs />
+
+    }
+])
+
+root.render(<RouterProvider router={routerConfig}> </RouterProvider>)
